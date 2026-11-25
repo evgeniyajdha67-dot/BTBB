@@ -54,5 +54,8 @@ app.post('/api/apply', async (req, res) => {
   }
 });
 
+// healthcheck (чтобы Render не ругался)
+app.get('/health', (req, res) => res.send('ok'));
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
